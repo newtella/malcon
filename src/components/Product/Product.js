@@ -1,22 +1,30 @@
-import classes from './Product.module.css'
+import Classes from './Product.module.css';
 
 const product = (props) => {
     return(
-        <div className={classes.ProductCard}>
-            <div className={classes.ProductTumb}>
-                <img src={props.img} alt=""/>
-            </div>
-            <div className={classes.ProductDetails}>
-                <h4>{props.title}</h4>
-                <p>{props.details}</p>
-                <div className={classes.ProductBottomDetails}>
-                    <div className={classes.ProductPrice}>{props.price}</div>
-                    <div className={classes.ProductLinks}>
+        <>
+        <div className={"col-lg-3 col-md-4 col-sm-6 mix women"}>
+            <div className={Classes.product__item}>
+                <div className={Classes.ProductTumb}>
+                    <img src={props.img} alt=""/>
+                </div>
+                <div className={Classes.product__item__text}>
+                    <h6><a href="#">{props.title}</a></h6>
+                    <div className="rating">
+                        <i className="fa fa-star" />
+                        <i className="fa fa-star" />
+                        <i className="fa fa-star" />
+                        <i className="fa fa-star" />
+                        <i className="fa fa-star" />
+                    </div>
+                    <div className={Classes.product__price}>{props.price}</div>
+                    <div className={Classes.ProductLinks}>
                         <a href={"/product/"+props.id}>Comprar</a>
                     </div>
                 </div>
             </div>
         </div>
+      </>
     );
 }
 export default product;
