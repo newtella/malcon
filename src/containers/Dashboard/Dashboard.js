@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Sales from '../../components/Sales/Sales';
+import WelcomeCards from '../../components/WelcomeCards/WelcomeCards';
 
 const Dashboard = (props) => {
     const [salesProductsState, salesProductsSetState] = useState([
@@ -63,6 +64,7 @@ const Dashboard = (props) => {
     return(
         <>
             <h1>Dashboard</h1>
+            <WelcomeCards/>
             <Sales salesProducts={salesProductsState}/>
         </>
 
