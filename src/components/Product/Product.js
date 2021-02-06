@@ -1,5 +1,5 @@
 import Classes from './Product.module.css';
-
+import { Link, link } from 'react-router-dom';
 const product = (props) => {
     return(
         <>
@@ -19,7 +19,8 @@ const product = (props) => {
                     </div>
                     <div className={Classes.product__price}>{props.price}</div>
                     <div className={Classes.ProductLinks}>
-                        <a href={"/product/"+props.id}>Comprar</a>
+                        {/* <a href={"/product/"+props.id}>Comprar</a> */}
+                        <Link to={"/product/"+props.id}>Comprar</Link>
                     </div>
                 </div>
             </div>
