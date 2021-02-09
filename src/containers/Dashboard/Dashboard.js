@@ -2,7 +2,7 @@ import Sales from '../../components/Sales/Sales';
 import WelcomeCards from '../../components/WelcomeCards/WelcomeCards';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Product from '../../components/Product/Product';
+
 
 const Dashboard = (props) => {
     const [productsState, setProductsState] = useState({
@@ -24,7 +24,6 @@ const Dashboard = (props) => {
     }, []);
     return(
         <>
-            <h1>Dashboard</h1>
             <WelcomeCards/>
             <Sales salesProducts={productsState}/>
         </>
