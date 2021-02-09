@@ -1,5 +1,6 @@
-import classes from './Toolbar.module.css'
-import NavItems from '../NavItems/NavItems'
+import classes from './Toolbar.module.css';
+import NavItems from '../NavItems/NavItems';
+import logo  from '../../../assets/img/logo/malcon.png';
 
 const toolbar = (props) =>
 {
@@ -9,7 +10,7 @@ const toolbar = (props) =>
                 <div className="row">
                     <div className="col-xl-3 col-lg-2">
                         <div className={classes.header__logo}>
-                        <a href="./index.html"></a>
+                        <a href="./index.html"><img src={logo} alt=""/></a>
                         </div>
                     </div>
                     <div className="col-xl-6 col-lg-7">

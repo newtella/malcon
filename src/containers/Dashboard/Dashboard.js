@@ -2,6 +2,7 @@ import Sales from '../../components/Sales/Sales';
 import WelcomeCards from '../../components/WelcomeCards/WelcomeCards';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Footer from '../../components/Footer/Footer';
 
 
 const Dashboard = (props) => {
@@ -26,6 +27,7 @@ const Dashboard = (props) => {
         <>
             <WelcomeCards/>
             <Sales salesProducts={productsState}/>
+            <Footer/>
         </>
     );
 }
