@@ -20,7 +20,7 @@ const product = (props) => {
                     <div className={Classes.product__price}>{props.price}</div>
                     <div className={Classes.ProductLinks}>
                         {/* <a href={"/product/"+props.id}>Comprar</a> */}
-                        <Link to={"/product/"+props.id}>Comprar</Link>
+                        <Link className={"btn btn-block btn-secondary"} to={"/product/"+props.id}>Comprar</Link>
                     </div>
                 </div>
             </div>
