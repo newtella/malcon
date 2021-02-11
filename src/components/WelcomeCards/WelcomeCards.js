@@ -28,7 +28,7 @@ const welcomeCards = () => {
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 p-0">
-              <div className={Classes.categories__item} style={{backgroundImage: `url(${classicImg})`, height: '49vh', backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
+              <div className={Classes.categories__item} style={{backgroundImage: `url(${classicImg})`, height: '50vh', backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
                 <div className={Classes.categories__text}>
                   <h4>Classics</h4>
                   <p>Formal Wear</p>
