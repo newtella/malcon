@@ -1,14 +1,14 @@
-import Classes from './Footer.module.css';
+import './Footer.css';
 import logo from '../../assets/img/logo/malcon.png';
 
 const Footer = () => {
     return (
-        <footer className={Classes.footer}>
+        <footer className="footer">
             <div className="container">
                 <div className="row">
                     <div className="col-8">
-                        <div className={Classes.footer__about}>
-                        <div className={Classes.footer__logo}>
+                        <div className="footer__about">
+                        <div className="footer__logo">
                             <a href="./index.html"><img src={logo} alt /></a>
                         </div>
                         <h6>About the Company</h6>
@@ -17,7 +17,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="col-4">
-                        <div className={Classes.footer__widget}>
+                        <div className="footer__widget">
                         <h6>Contact Us</h6>
                         <ul>
                             <li><a href="#">21st Ave. Revolution - Guatemala, Guatemala</a></li>
@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className={Classes.footer__copyright__text}>
+                        <div className="footer__copyright__text">
                         <p>Copyright ©
                             All rights reserved | This
                             template is made with love <i className="fa fa-heart" aria-hidden="true" /> by <a href="#" target="_blank">newtella</a>
