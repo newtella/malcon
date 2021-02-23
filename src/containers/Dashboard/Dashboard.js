@@ -6,9 +6,7 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Dashboard = (props) => {
-    const [productsState, setProductsState] = useState({
-        Products: []
-    });
+    const [productsState, setProductsState] = useState([]);
     useEffect(() => {
         axios.get('https://swapi.dev/api/films')
         .then(response => {
@@ -20,7 +18,7 @@ const Dashboard = (props) => {
               img: 'https://cdn.32pt.com/public/sl-prod-od-0/images/retail-products/1F1402A6F6F4A6/1F1402A6F6F4A6-50F2F15A7633-GS1-TC0-WHT/front/thumb.jpg',
               characters: [...product.characters]
             }));
-            setProductsState({Products: [...productsinfo]})
+            setProductsState([...productsinfo])
         });
     }, []);
     return(

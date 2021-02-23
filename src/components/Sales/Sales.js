@@ -3,7 +3,7 @@ import Product from '../Product/Product';
 import ProductGallery from '../ProductGallery/ProductGallery';
 
 const sales = (props) => {
-  let salesProducts = props.salesProducts.Products.map((product, i) => {
+  let salesProducts = props.salesProducts.map((product, i) => {
       return  <Product
       key = {product.episode_id}
       id = {product.episode_id}
