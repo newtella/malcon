@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import PDstyle from './PDstyle.css';
 
 const ProductDetail = (props) =>
-{
+{   
     const [product, setProductState] = useState({});
-    const productId = +props.match.params.productId;
+    const productId = +props.productDetail;
     const productDB = [
         {
             id: 0,
@@ -49,30 +50,44 @@ const ProductDetail = (props) =>
         }
     ];
 
+
     useEffect(() => {
         /* ir al web service.. y obtener detalles del producto seleccionado... */
         const p = (productDB.filter(p => p.id === productId))[0] || {};
         setProductState({...p});
-    }, []);
+    }, [productId]);
 
     let objectInfo = <div style={{textAlign: "center"}}><h1>Product not found...</h1></div>;
     if(Object.entries(product).length !== 0)
     {
         objectInfo = (
-            <div style={{textAlign: "center"}}>
-                <h1>{product.title}</h1>
-                <img src={product.img} alt="product"/>
-                <h2>{product.details}</h2>
+            <div className="modal app PopUp">
+                <button style={{padding: "10px"}} className="close" onClick={()=> props.popUp(false)} >X</button>
+                <div className="details" key={product._id}>
+                    <div className="big-img">
+                        <img src={product.img} alt=""/>
+                    </div>
+                    <div className="box">
+                        <div className="row">
+                        <h2>{product.title}</h2>
+                        <span style={{marginLeft: "05px"}}>{product.price}</span>
+                        </div>
+                        <p>{product.title}</p>
+                        <p>{product.details}</p>
+                        <button className="cart">Add to cart</button>
+                    </div>
+                </div>
             </div>
-        );
+        )
+    }if (props.popUp == false) {
+        return null;
     }
-
     return (
         <>
-            <h1>Product detail</h1>
             {objectInfo}
         </>
     );
+    
 }
 
 export default ProductDetail;
