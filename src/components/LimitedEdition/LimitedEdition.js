@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sales from '../Sales/Sales';
+import Footer from '../Footer/Footer';
 
 const LimitedEdition = (props) => {
     const [productsState, setProductsState] = useState([]);
@@ -27,6 +28,7 @@ const LimitedEdition = (props) => {
                 </div>
             </div>
             <Sales salesProducts={productsState}/>
+            <Footer/>
         </>
     );
 }
