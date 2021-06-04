@@ -1,9 +1,21 @@
 import Classes from './Product.module.css';
 import { Link, link } from 'react-router-dom';
-const product = (props) => {
+import React, { useState } from 'react';
+import ProductDetail from '../../containers/ProductDetail/ProductDetail';
+
+const Product = (props) => {
+    const [popUp, setPopUp] = useState(false)
+    const duringPopUp = popUp ? " during-popup" : ""
+    const [article, setArticle] = useState();
+
+    const setModalToTrue = (id) => {
+        setArticle(id);
+        setPopUp(true);
+    }
+
     return(
         <>
-        <div className={"col-lg-3 col-md-4 col-sm-6 mix women"}>
+        <div className={"col-lg-3 col-md-4 col-sm-6 mix women"+ duringPopUp}>
             <div className={Classes.product__item}>
                 <div className={Classes.ProductTumb}>
                     <img src={props.img} alt=""/>
@@ -19,13 +31,15 @@ const product = (props) => {
                     </div>
                     <div className={Classes.product__price}>{props.price}</div>
                     <div className={Classes.ProductLinks}>
+                    <button className={"btn btn-block btn-secondary" + duringPopUp} onClick = {() => setModalToTrue(props.id)}>Comprar</button>
                         {/* <a href={"/product/"+props.id}>Comprar</a> */}
-                        <Link className={"btn btn-block btn-secondary"} to={"/product/"+props.id}>Comprar</Link>
+                        {/* <Link className={"btn btn-block btn-secondary"} to={"/product/"+props.id}>Comprar</Link> */}
                     </div>
                 </div>
             </div>
         </div>
+        {popUp && <ProductDetail popUp = {setPopUp} productDetail = {article}/>}
       </>
     );
 }
-export default product;
+export default Product;
