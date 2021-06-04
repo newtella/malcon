@@ -1,11 +1,8 @@
-import Sales from '../../components/Sales/Sales';
-import WelcomeCards from '../../components/WelcomeCards/WelcomeCards';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Footer from '../../components/Footer/Footer';
-import ProductGallery from '../../components/ProductGallery/ProductGallery';
+import Sales from '../Sales/Sales';
 
-const Dashboard = (props) => {
+const LimitedEdition = (props) => {
     const [productsState, setProductsState] = useState([]);
     useEffect(() => {
         axios.get('https://swapi.dev/api/films')
@@ -23,11 +20,14 @@ const Dashboard = (props) => {
     }, []);
     return(
         <>
-            <WelcomeCards/>
-            <ProductGallery/>
+            <div className="jumbotron jumbotron-fluid bg-primary">
+                <div className="container">
+                <h1 className="display-4 text-light">Exclusive Drop</h1>
+                <p className="lead text-light">Malcon Exclusive drop - Limited Edition</p>
+                </div>
+            </div>
             <Sales salesProducts={productsState}/>
-            <Footer/>
         </>
     );
 }
-export default Dashboard;
+export default LimitedEdition;

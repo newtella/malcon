@@ -31,7 +31,7 @@ const Product = (props) => {
                     </div>
                     <div className={Classes.product__price}>{props.price}</div>
                     <div className={Classes.ProductLinks}>
-                    <button className={"btn btn-block btn-secondary" + duringPopUp} onClick = {() => setModalToTrue(props.id)}>Comprar</button>
+                    <button className={"btn btn-block btn-info" + duringPopUp} onClick = {() => setModalToTrue(props.id)}>Comprar</button>
                         {/* <a href={"/product/"+props.id}>Comprar</a> */}
                         {/* <Link className={"btn btn-block btn-secondary"} to={"/product/"+props.id}>Comprar</Link> */}
                     </div>
