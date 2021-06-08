@@ -3,9 +3,9 @@
   width: 80%;
   height: 80%;
   margin: 10px auto;
-  transition: 1.1s ease-out;
+  transition: 5.1s ease-out;
   box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
-  filter: blur(0);
+  filter: blur(10);
   transform: scale(1);
   opacity: 1;
   visibility: visible;

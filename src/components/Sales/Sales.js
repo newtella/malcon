@@ -3,14 +3,14 @@ import Product from '../Product/Product';
 
 
 const sales = (props) => {
-  let salesProducts = props.salesProducts.map((product, i) => {
+  let salesProducts = props.salesProducts.map((product, i) => { 
       return  <Product
-      key = {product.episode_id}
-      id = {product.episode_id}
-      img = {product.img}
-      details = {product.details}
+      key = {product.id}
+      id = {product.id}
+      image = {product.image}
+      details = {product.description}
       title = {product.title}
-      price = {product.price}/>
+      price = {product.price.$numberDecimal}/>
   });
 
   return (
